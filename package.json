@@ -1,10 +1,10 @@
 {
-  "name": "nativefier",
+  "name": "kaleofier",
   "version": "5.1.1",
   "description": "Wrap single-page web apps natively",
   "main": "index.js",
   "bin": {
-    "nativefier": "cli.js"
+    "kaleofier": "cli.js"
   },
   "repository": {
     "type": "git",
