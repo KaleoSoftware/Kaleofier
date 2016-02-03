@@ -1,13 +1,10 @@
-# Nativefier
+# Kaleofier
 
 ![Dock Screenshot](https://raw.githubusercontent.com/skewedlines/Nativefier/master/screenshots/Dock%20Screenshot.png)
 
 ## Introduction
-[![NPM](https://nodei.co/npm/nativefier.png)](https://nodei.co/npm/nativefier/)
 
-Packages and wraps a single-page web app in an [Electron](http://electron.atom.io) OS executable (.app, .exe, etc) via the command line. 
-
-I did this because I was tired of having to `⌘-tab` or `alt-tab` to my browser and then search through the numerous open tabs when I was using [Facebook Messenger](http://messenger.com) or [Whatsapp Web](http://web.whatsapp.com).
+Packages and wraps a single-page web app in an [Electron](http://electron.atom.io) OS executable (.app, .exe, etc) via the command line.
 
 *A fork of the awesome [electron-packager](https://github.com/maxogden/electron-packager).*
 
@@ -15,13 +12,13 @@ I did this because I was tired of having to `⌘-tab` or `alt-tab` to my browser
 
 ```bash
 # for use from cli
-$ npm install nativefier -g
+$ npm install kaleofier -g
 ```
 
 ## Usage
 
 ```
-Usage: nativefier <appname> <target> --platform=<platform> --arch=<arch> --version=<version>
+Usage: kaleofier <appname> <target> --platform=<platform> --arch=<arch> --version=<version>
 
 Required options
 
@@ -31,7 +28,7 @@ platform           all, or one or more of: linux, win32, darwin (comma-delimited
 arch               all, ia32, x64
 version            see https://github.com/atom/electron/releases
 
-Example            nativefier Messenger --target=http://messenger.com --platform=darwin --arch=x64 --version=0.28.2
+Example            kaleofier Kaleo https://kaleosoftware.kaleosoftware.com/v4/boards?sitemap=kaleo --platform=win32 --arch=x64 --version=0.32.2 --overwrite --badge --icon=../kaleo_fish_logo
 
 Optional options
 
@@ -72,11 +69,11 @@ To retrieve the `.icns` file from the downloaded file, extract it first and pres
 
 ### OSX Dock Badge
 
-On OSX, it is desired for the App dock icon to show a badge on the receipt of a desktop notification. 
+On OSX, it is desired for the App dock icon to show a badge on the receipt of a desktop notification.
 
 There is no known way to intercept and set an event listener for a desktop notification triggered by the [`<webview>`](https://github.com/atom/electron/blob/master/docs/api/web-view-tag.md), the current workaround is to listen for `document.title` changes within the `<webview>`. Typical web apps like Facebook Messenger will change the `document.title` to "John sent a message..." on the receipt of a desktop notification, and this is what we will listen for to trigger the app badge on the dock.
 
-However, this would cause issues when the command line argument `target` is set to a external page which is not a single page app, because clicking on hyperlinks and switching pages would naturally change the `document.title`. Hence, `--badge` is an optional command argument that can be set by the user if the side effect of this workaround is understood. 
+However, this would cause issues when the command line argument `target` is set to a external page which is not a single page app, because clicking on hyperlinks and switching pages would naturally change the `document.title`. Hence, `--badge` is an optional command argument that can be set by the user if the side effect of this workaround is understood.
 
 ## Examples
 
