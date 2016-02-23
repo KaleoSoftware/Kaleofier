@@ -88,12 +88,12 @@ Creating an native wrapper for Facebook Messenger with the following arguments:
 - OSX dock badges on (See notes above)
 
 ```bash
-$ nativefier Messenger http://messenger.com --platform=darwin --arch=x64 --version=0.29.1 --overwrite --badge
+$ kaleofier Messenger http://messenger.com --platform=darwin --arch=x64 --version=0.29.1 --overwrite --badge
 ```
 
 ## How It Works
 
-A template app with the appropriate event listeners and callbacks set up is included in the `/app` folder. When the `nativefier` command is executed, this folder is copied to a temporary directory with the appropriate parameters in a configuration file, and the core methods of `electron-packager` is called on that directory.
+A template app with the appropriate event listeners and callbacks set up is included in the `/app` folder. When the `kaleofier` command is executed, this folder is copied to a temporary directory with the appropriate parameters in a configuration file, and the core methods of `electron-packager` is called on that directory.
 
 ## Notes
 

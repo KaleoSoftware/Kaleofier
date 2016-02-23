@@ -60,7 +60,7 @@
 var ipc = require('ipc');
 
 ipc.on('params', function(message) {
-
+  
     var appArgs = JSON.parse(message);
     console.log(appArgs);
     document.title = appArgs.name;
